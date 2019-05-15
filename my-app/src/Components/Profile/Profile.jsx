@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Profile = ({ User }) => {
-  const { name, tag, location, avatar, stats } = User;
+const Profile = ({ user }) => {
+  const { name, tag, location, avatar, stats } = user;
   const { followers, views, likes } = stats;
   return (
     <div className="profile">
@@ -35,22 +35,8 @@ const Profile = ({ User }) => {
   );
 };
 
-/*
 Profile.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired,
-  }),
-};
-*/
-
-Profile.propTypes = {
-  User: PropTypes.shape({
+  user: PropTypes.shape({
     avatar: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

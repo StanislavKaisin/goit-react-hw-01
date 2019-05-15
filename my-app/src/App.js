@@ -1,38 +1,28 @@
 import React from 'react';
 import Profile from './Components/Profile/Profile';
 import Stats from './Components/Stats/Stats';
+import PricingPlan from './Components/PricingPlan/PricingPlan';
+import TransactionHistory from './Components/TransactionHistory/TransactionHistory';
 // import './App.css';
 
-const USER1 = {
-  name: 'Jacques Gluke',
-  tag: '@jgluke',
-  location: 'Ocho Rios, Jamaica',
-  avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/r_oy/128.jpg',
-  stats: {
-    followers: 5603,
-    views: 4827,
-    likes: 1308,
-  },
-};
+import USER1 from './Sources/user1.json';
+import USER2 from './Sources/user2.json';
+import STATS from './Sources/stats.json';
+import pricingPlanItems from './Sources/pricing-plan.json';
+import transactions from './Sources/transactions.json';
 
-const USER2 = {
-  name: 'Petra Marica',
-  tag: '@pmarica',
-  location: 'Salvador, Brasil',
-  avatar:
-    'https://i.pinimg.com/originals/a0/40/66/a04066a2d1fcf25df39c599e093995c8.jpg',
-  stats: {
-    followers: 1000,
-    views: 2000,
-    likes: 3000,
-  },
-};
+// console.log('USER1=', USER1);
+// console.log('STATS=', STATS);
+// console.log('pricingPlanItems=', pricingPlanItems);
+// console.log('transactions=', transactions);
 
 function App() {
   return (
     <div>
-      <Profile User={USER1}> </Profile> <Stats> </Stats>{' '}
-      <Profile User={USER2}> </Profile> <Stats> </Stats>{' '}
+      <Profile user={USER1}> </Profile> <Profile user={USER2}> </Profile>{' '}
+      <Stats stats={STATS}> </Stats>{' '}
+      <PricingPlan items={pricingPlanItems}> </PricingPlan>{' '}
+      <TransactionHistory items={transactions} />{' '}
     </div>
   );
 }
