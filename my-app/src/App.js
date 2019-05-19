@@ -3,7 +3,6 @@ import Profile from './Components/Profile/Profile';
 import Stats from './Components/Stats/Stats';
 import PricingPlan from './Components/PricingPlan/PricingPlan';
 import TransactionHistory from './Components/TransactionHistory/TransactionHistory';
-// import './App.css';
 
 import USER1 from './Sources/user1.json';
 import USER2 from './Sources/user2.json';
@@ -11,18 +10,15 @@ import STATS from './Sources/stats.json';
 import pricingPlanItems from './Sources/pricing-plan.json';
 import transactions from './Sources/transactions.json';
 
-// console.log('USER1=', USER1);
-// console.log('STATS=', STATS);
-// console.log('pricingPlanItems=', pricingPlanItems);
-// console.log('transactions=', transactions);
-
 function App() {
   return (
     <div>
-      <Profile user={USER1}> </Profile> <br />
-      <Profile user={USER2}> </Profile> <br /> <Stats stats={STATS}> </Stats>{' '}
-      <br />
+      <h2> Profile component </h2> <Profile user={USER1}> </Profile> <br />
+      <Profile user={USER2}> </Profile> <br />
+      <h2> Stats component </h2> <Stats stats={STATS}> </Stats> <br />
+      <h2> PricingPlan component </h2>{' '}
       <PricingPlan items={pricingPlanItems}> </PricingPlan> <br />
+      <h2> TransactionHistory component </h2>{' '}
       <TransactionHistory items={transactions} />{' '}
     </div>
   );
