@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PricingItem from '../PricingItem/PricingItem';
+import styles from './PricingPlan.module.css';
 
 const PricingPlan = ({ items } = []) => {
   return (
-    <ul className="pricing-plan">
+    <ul className={styles.pricingPlan}>
       {items.map(item => (
-        <li key={item.label} className="item">
+        <li key={item.label} className={styles.item}>
           <PricingItem {...item}> </PricingItem>
         </li>
       ))}

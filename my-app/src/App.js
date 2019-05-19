@@ -19,9 +19,10 @@ import transactions from './Sources/transactions.json';
 function App() {
   return (
     <div>
-      <Profile user={USER1}> </Profile> <Profile user={USER2}> </Profile>{' '}
-      <Stats stats={STATS}> </Stats>{' '}
-      <PricingPlan items={pricingPlanItems}> </PricingPlan>{' '}
+      <Profile user={USER1}> </Profile> <br />
+      <Profile user={USER2}> </Profile> <br /> <Stats stats={STATS}> </Stats>{' '}
+      <br />
+      <PricingPlan items={pricingPlanItems}> </PricingPlan> <br />
       <TransactionHistory items={transactions} />{' '}
     </div>
   );

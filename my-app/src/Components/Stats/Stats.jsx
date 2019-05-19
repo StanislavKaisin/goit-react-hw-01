@@ -1,17 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Stats.module.css';
+
+const randomColor = () => {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b}`;
+};
 
 const Stats = ({ stats = [] }) => {
   return (
-    <section className="stats-section">
-      <h2 className="title">Upload stats</h2>
+    <section className={styles.statsSection}>
+      <h2 className={styles.title}>Upload stats</h2>
 
-      <ul className="stat-list">
+      <ul className={styles.statList}>
         {stats.map(({ id, label, percentage }) => {
           return (
-            <li key={id} className="item">
-              <span className="label">{label}</span>
-              <span className="percentage">{percentage}</span>
+            <li
+              key={id}
+              className={styles.item}
+              style={{ backgroundColor: `${randomColor()}` }}
+            >
+              <span className={styles.label}>{label}</span>
+              <span className={styles.percentage}>{percentage}%</span>
             </li>
           );
         })}
